@@ -1,17 +1,20 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
-import { assets } from '../../assets/assets'
-import {UserButton} from '@clerk/clerk-react'
+import Navbar from '../../components/HotelOwner/Navbar'
+import Sidebar from '../../components/HotelOwner/Sidebar';
+import { Outlet } from 'react-router-dom';
 
 const Layout = () => {
   return (
-    <div className='flex items-center justify-between px-4 md:px-8 border-b border-gray-300 py-3 bg-white transition-all'>
-      <Link to='/'>
-      <img src={assets.logo} alt="logo" className='h-9 invert opacity-80' />
-      </Link>
-      <UserButton />
+    <div className='flex flex-col h-screen'>
+      <Navbar />
+      <div className='flex h-full'>
+        <Sidebar />
+        <div className='flex-1 p-4 pt-10 md:px-10 h-full'>
+          <Outlet />
+        </div>
+      </div>
     </div>
   )
 }
 
-export default Layout
+export default Layout;
