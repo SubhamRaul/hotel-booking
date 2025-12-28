@@ -70,7 +70,7 @@ const AddRoom = () => {
             checked={inputs.amenities[amenity]} 
             onChange={(e)=> setInputs({...inputs , amenities:{...inputs.amenities , [amenity]: !inputs.amenities[amenity]}})} 
             className='mr-2'/>
-            <label htmlFor={`amenities${index+1}`}>{amenity}</label>
+            <label htmlFor={`amenities${index+1}`}> {amenity}</label>
           </div>
         ))}
       </div>
